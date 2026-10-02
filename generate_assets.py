@@ -4,12 +4,15 @@ Edit the CONFIG block, run `python3 generate_assets.py`, commit README.md + asse
 Needs: Pillow (only for hero.gif).
 """
 import math
+import datetime
 import os
 import random
 from PIL import Image
 
 # ------------------------------------------------------------------ CONFIG
-USERNAME = "YOUR_USERNAME"
+USERNAME = "Alfaeran"
+LINKEDIN = "alfaeran"                   # linkedin.com/in/<this>; "" drops the badge
+EMAIL = "maaurigar@gmail.com"           # "" drops the badge
 NAME = "ALFAERAN"                       # big pixel title in hero.gif (letters/digits only)
 HERO_SUB = "SYNTHETIC DATA // NLP"      # small line under the title
 
@@ -22,18 +25,20 @@ ABOUT_LINES = [                         # typing animation, A-Z 0-9 . , : - / > 
 
 STACK = {                               # SEED LIST - edit to match what you really use
     "DATA AND AI": ["PYTHON", "PANDAS", "NLP", "SYNTHETIC DATA", "TEXT CLASSIFICATION", "DATA LABELING"],
-    "BACKEND AND WEB": ["PHP", "SQL", "JAVASCRIPT"],
-    "TOOLS": ["GIT", "GITHUB", "NOTION", "GOOGLE SHEETS", "LOOKER STUDIO", "CLAUDE"],
+    "BACKEND AND WEB": ["PHP", "SQL", "JAVASCRIPT", "TYPESCRIPT", "REACT", "GO"],
+    "TOOLS": ["GIT", "GITHUB", "BASH", "NOTION", "GOOGLE SHEETS", "LOOKER STUDIO", "CLAUDE"],
 }
 
+YEAR = str(datetime.date.today().year)  # present year, so the timeline never goes stale
+
 TIMELINE = [                            # (label, [lines]) - alternates above/below the line
-    ("2026", ["SYNTHETIC INDONESIAN", "REVIEW DATASETS"]),
-    ("2026", ["PRICELIST SCANNER", "AND ANALYSIS"]),
-    ("2026", ["ARA 8.0 MARKETING", "SYSTEM"]),
+    (YEAR, ["SYNTHETIC INDONESIAN", "REVIEW DATASETS"]),
+    (YEAR, ["PRICELIST SCANNER", "AND ANALYSIS"]),
+    (YEAR, ["ARA 8.0 MARKETING", "SYSTEM"]),
     ("NEXT", ["YOUR NEXT", "BIG REPO"]),
 ]
 
-REPOS = ["REPO_1", "REPO_2", "REPO_3", "REPO_4"]   # pinned-repo cards in README
+REPOS = ["Pricelist-image-scanner-automation-analysis", "Project_Iseng", "FP_INSIS", "BarangTemu-Lost-Found--Project"]   # pinned-repo cards in README
 # --------------------------------------------------------------------------
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -106,6 +111,10 @@ STYLE = """<style>
 .fly{animation:fly 14s steps(70) infinite}
 @keyframes fly{from{transform:translateX(-40px)}to{transform:translateX(940px)}}
 .fl{animation:blink .3s steps(1) infinite}
+.df{animation:df 1.2s steps(1) infinite}
+@keyframes df{0%,49%{opacity:.08}50%,100%{opacity:.5}}
+.bump{animation:bump 1.2s steps(2) infinite;transform-box:fill-box;transform-origin:center}
+@keyframes bump{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}.ty{opacity:1}}
 </style>"""
 
@@ -262,6 +271,17 @@ def rocket_svg(x, y, s):
     return f'<g class="fly">{"".join(body)}<g class="fl">{"".join(flame)}</g></g>'
 
 
+def dancefloor(w, y, rows=2, cw=30, rh=14):
+    """Checkerboard floor whose tiles flash in a travelling wave."""
+    tiles = []
+    for r in range(rows):
+        for c in range(w // cw):
+            delay = round(((c + r * 2) % 6) * 0.2, 1)
+            tiles.append(f'<rect class="df" x="{c * cw}" y="{y + r * rh}" width="{cw - 2}" '
+                         f'height="{rh - 2}" fill="#fff" style="animation-delay:-{delay}s"/>')
+    return "".join(tiles)
+
+
 def timeline():
     w, h, ly = 900, 290, 148
     xs = [150, 360, 570, 780]
@@ -274,7 +294,8 @@ def timeline():
         top = ly - 34 - block_h if up else ly + 34
         lw = max([text_w(label, 3)] + [text_w(l, 2) for l in lines])
         body_stars_avoid.append((x - lw // 2, top, x + lw // 2, top + block_h))
-        items.append(pixel_text(label, x - text_w(label, 3) // 2, top, 3))
+        items.append(f'<g class="bump" style="animation-delay:-{i * 0.3:.1f}s">'
+                     f'{pixel_text(label, x - text_w(label, 3) // 2, top, 3)}</g>')
         for j, l in enumerate(lines):
             items.append(pixel_text(l, x - text_w(l, 2) // 2, top + 31 + j * 20, 2, fill="#bdbdbd"))
         # stem + node
@@ -282,7 +303,8 @@ def timeline():
         items.append(f'<line x1="{x}" y1="{sy1}" x2="{x}" y2="{sy2}" stroke="#fff" stroke-width="2" stroke-dasharray="4 4" opacity=".5"/>')
         items.append(f'<g class="{"ab"[i % 2]}" fill="#fff" style="animation-delay:-{i * 0.7}s">{cross(x - 2, ly - 2, 4, 4)}</g>')
     line = f'<line x1="0" y1="{ly + 1}" x2="{w}" y2="{ly + 1}" stroke="#fff" stroke-width="2" stroke-dasharray="8 8" class="march" opacity=".5"/>'
-    body = starfield(w, h, 60, avoid=body_stars_avoid) + line + "".join(items) + rocket_svg(0, ly - 24, 3) + shooting_star(20, 8)
+    body = (starfield(w, h, 60, avoid=body_stars_avoid) + dancefloor(w, h - 32) + line
+            + "".join(items) + rocket_svg(0, ly - 24, 3) + shooting_star(20, 8))
     write("timeline.svg", svg(w, h, body))
 
 
@@ -433,6 +455,13 @@ def readme():
             pins += (f'<td><a href="https://github.com/{u}/{r}"><img src="https://github-readme-stats.vercel.app/api/pin/'
                      f'?username={u}&repo={r}&{card}" width="420"/></a></td>\n')
         pins += "</tr>\n"
+    badge = "style=flat-square&logoColor=white&labelColor=000000&color=ffffff"
+    links = [f'<a href="https://github.com/{u}"><img src="https://img.shields.io/badge/GITHUB-000000?{badge}&logo=github"/></a>']
+    if LINKEDIN:
+        links.append(f'<a href="https://linkedin.com/in/{LINKEDIN}"><img src="https://img.shields.io/badge/LINKEDIN-000000?{badge}&logo=linkedin"/></a>')
+    if EMAIL:
+        links.append(f'<a href="mailto:{EMAIL}"><img src="https://img.shields.io/badge/EMAIL-000000?{badge}&logo=gmail"/></a>')
+    contact = "\n".join(links)
     md = f"""<div align="center">
 
 <img src="assets/hero.gif" width="100%" alt="pixel space banner"/>
@@ -464,9 +493,7 @@ def readme():
 <img src="assets/heading-contact.svg" width="100%" alt="contact"/>
 
 <p align="center">
-<a href="https://github.com/{u}"><img src="https://img.shields.io/badge/GITHUB-000000?style=flat-square&logo=github&logoColor=white&labelColor=000000&color=ffffff"/></a>
-<a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=flat-square&logo=linkedin&logoColor=white&labelColor=000000&color=ffffff"/></a>
-<a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/EMAIL-000000?style=flat-square&logo=gmail&logoColor=white&labelColor=000000&color=ffffff"/></a>
+{contact}
 </p>
 
 <img src="assets/divider.svg" width="100%" alt=""/>

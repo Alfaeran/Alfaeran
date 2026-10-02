@@ -10,12 +10,12 @@
 
 <table align="center">
 <tr>
-<td><a href="https://github.com/YOUR_USERNAME/REPO_1"><img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_1&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
-<td><a href="https://github.com/YOUR_USERNAME/REPO_2"><img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_2&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
+<td><a href="https://github.com/Alfaeran/Pricelist-image-scanner-automation-analysis"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Alfaeran&repo=Pricelist-image-scanner-automation-analysis&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
+<td><a href="https://github.com/Alfaeran/Project_Iseng"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Alfaeran&repo=Project_Iseng&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
 </tr>
 <tr>
-<td><a href="https://github.com/YOUR_USERNAME/REPO_3"><img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_3&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
-<td><a href="https://github.com/YOUR_USERNAME/REPO_4"><img src="https://github-readme-stats.vercel.app/api/pin/?username=YOUR_USERNAME&repo=REPO_4&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
+<td><a href="https://github.com/Alfaeran/FP_INSIS"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Alfaeran&repo=FP_INSIS&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
+<td><a href="https://github.com/Alfaeran/BarangTemu-Lost-Found--Project"><img src="https://github-readme-stats.vercel.app/api/pin/?username=Alfaeran&repo=BarangTemu-Lost-Found--Project&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" width="420"/></a></td>
 </tr>
 </table>
 
@@ -30,16 +30,16 @@
 <img src="assets/heading-stats.svg" width="100%" alt="stats"/>
 
 <p align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&hide_border=false&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" height="165"/>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&hide_border=false&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Alfaeran&show_icons=true&hide_border=false&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Alfaeran&layout=compact&hide_border=false&theme=dark&bg_color=000000&border_color=ffffff&title_color=ffffff&icon_color=ffffff&text_color=bdbdbd" height="165"/>
 </p>
 
 <img src="assets/heading-contact.svg" width="100%" alt="contact"/>
 
 <p align="center">
-<a href="https://github.com/YOUR_USERNAME"><img src="https://img.shields.io/badge/GITHUB-000000?style=flat-square&logo=github&logoColor=white&labelColor=000000&color=ffffff"/></a>
-<a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=flat-square&logo=linkedin&logoColor=white&labelColor=000000&color=ffffff"/></a>
-<a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/EMAIL-000000?style=flat-square&logo=gmail&logoColor=white&labelColor=000000&color=ffffff"/></a>
+<a href="https://github.com/Alfaeran"><img src="https://img.shields.io/badge/GITHUB-000000?style=flat-square&logoColor=white&labelColor=000000&color=ffffff&logo=github"/></a>
+<a href="https://linkedin.com/in/alfaeran"><img src="https://img.shields.io/badge/LINKEDIN-000000?style=flat-square&logoColor=white&labelColor=000000&color=ffffff&logo=linkedin"/></a>
+<a href="mailto:maaurigar@gmail.com"><img src="https://img.shields.io/badge/EMAIL-000000?style=flat-square&logoColor=white&labelColor=000000&color=ffffff&logo=gmail"/></a>
 </p>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
